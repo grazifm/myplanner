@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de eventos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{/evento}" method=post th:object="${evento}">
+    	Nome: <input type="text" th:field="*{nome}"><br>
+    	Localização: <input type="text" th:field="*{localizacao}">
+    	Data: <input type="text" th:field="*{data}">
+    	Horário: <input type="text" th:field="*{horario}">
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de eventos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>CADASTRO I <h1>EVENTO CADASTRADO</h1>
+   <div th:text="'nome : ' + ${evt.nome} "></div>
+   <div th:text="'data : ' + ${evt.data} "></div>
+   <a href="/evento">Voltar</a>
+</body>
+</html>

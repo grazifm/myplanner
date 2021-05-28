@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Evento (Atualizar)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{'/upd/' + ${id}}" method=post>
+    	Localizacao: <input type="text" th:field="${antigo.localizacao}">
+    	Data: <input type="text" th:field="${antigo.data}">
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
