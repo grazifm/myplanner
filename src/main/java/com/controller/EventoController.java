@@ -38,6 +38,7 @@ public class EventoController {
 			                  Model model) {
 		EventoService es = context.getBean(EventoService.class);
 		es.inserirEvento(evt);
+		model.addAttribute("tipo","EVENTO");
 		return "sucesso";
 	}
 	
@@ -66,27 +67,23 @@ public class EventoController {
 	}
 	
 	@GetMapping("/upd/{id}")
-    public String atualizar(@PathVariable("id") int id, Model model){
+    public String atualizar(@PathVariable("id") int id, Model model) {
 		EventoService cdao = context.getBean(EventoService.class);
 		Map<String,Object> antigo = cdao.pegarEvento(id);
-		Evento evt = new Evento((String)antigo.get("localizacao"),(String)antigo.get("data"));
+		Evento evt = new Evento((String)antigo.get("nome"),(String)antigo.get("localizacao"),(String)antigo.get("data"));
 		model.addAttribute("antigo",evt);
 		model.addAttribute("id",id);
 		return "formeventoupd";
+	
     }
 	
 	@PostMapping("/upd/{id}")
 	public String atualizar(@PathVariable("id") int id,@ModelAttribute Evento evt, Model model) {
 		EventoService cdao = context.getBean(EventoService.class);
 		cdao.atualizarEvento(id, evt);
-		return "redirect:/eventos";
+		model.addAttribute("tipo","EVENTO");
+		return "sucessoupd";
 	}
 	
 	
-	/*@GetMapping("/")
-	public String principal(Model model) {
-		String nome = "Teste";
-		model.addAttribute("nome",nome);
-		return "principal";
-	}*/
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Atualização - Sucesso</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>
+     <span th:text="${tipo}"></span> INSERIDO COM SUCESSO!
+    </h1>
+    <p th:if = "${tipo == 'FILME'}"><a th:href="@{/filmes}">VOLTAR</a></p>
+    <p th:if = "${tipo == 'LIVRO'}"><a th:href="@{/livros}">VOLTAR</a></p>
+    <p th:if = "${tipo == 'SERIE'}"><a th:href="@{/series}">VOLTAR</a></p>
+    <p th:if = "${tipo == 'EVENTO'}"><a th:href="@{/eventos}">VOLTAR</a></p>
+</body>
+</html>

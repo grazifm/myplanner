@@ -2,20 +2,46 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <title>Cadastro de eventos</title>
+    <title>Cadastro Geral</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     <h1>
-    	| Cadastre aqui seus eventos/compromissos |
+    	| Cadastre aqui seus compromissos, livros, filmes e séries |
     </h1>
     <ul>
 		<li>
 			<a th:href="@{/evento}">Cadastrar Evento</a>
 		</li>
-		<li>
-			<a th:href="@{/eventos}">Listagem</a>
+		
+		<li>	
+    		<a th:href="@{/eventos}">Listagem de Eventos</a>
+    	</li>
+    	
+    	<li>
+			<a th:href="@{/livro}">Cadastrar Livro</a>
 		</li>
+		
+    	<li>	
+    		<a th:href="@{/livros}">Listagem de Livros</a>
+    	</li>
+    	
+    	<li>
+			<a th:href="@{/filme}">Cadastrar Filme</a>
+		</li>
+		
+    	<li>	
+    		<a th:href="@{/filmes}">Listagem de Filmes</a>
+    	</li>
+    	
+    	<li>
+			<a th:href="@{/serie}">Cadastrar Serie</a>
+		</li>
+		
+    	<li>	
+    		<a th:href="@{/series}">Listagem de Séries</a>
+    	</li>
+    	
 	</ul>
 </body>
 </html>

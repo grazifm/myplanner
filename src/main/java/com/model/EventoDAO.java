@@ -43,7 +43,7 @@ public class EventoDAO {
     }
     
     public List<Map<String, Object>> pegarEventos() {
-    	String sql = "SELECT * FROM evento";
+    	String sql = "SELECT * FROM evento ORDER BY id" ;
     	List<Map<String, Object>> eventos = (List<Map<String, Object>>) jdbc.queryForList(sql);
     	return eventos;
     }
@@ -53,10 +53,13 @@ public class EventoDAO {
         jdbc.update(sql, new Object[] {id});
     }
     
-    public void atualizarEvento(int id,Evento evt) {
-    	String sql = "UPDATE evento SET nome = ?, data = ? WHERE id = ?";
-    	 jdbc.update(sql, new Object[]{
-         		evt.getNome(), evt.getData(),id
-         });
+    public void atualizarEvento(int id,Evento evento) {
+    	String sql = "UPDATE evento SET localizacao = ?, data = ? WHERE id = ?";
+    	Object[] obj = new Object[3];
+
+		obj[0] = evento.getLocalizacao();
+		obj[1] = evento.getData();
+		obj[2] = id;
+    	 jdbc.update(sql, obj);
     }
 }

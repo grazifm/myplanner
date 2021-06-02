@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cadastro de eventos</title>
+    <title>Cadastro - Sucesso</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     <h1>
-    	CADASTRO INSERIDO COM SUCESSO!
+     <span th:text="${tipo}"></span> INSERIDO COM SUCESSO!
     </h1>
+    <p><a th:href="@{/}">VOLTAR</a></p>
 </body>
 </html>

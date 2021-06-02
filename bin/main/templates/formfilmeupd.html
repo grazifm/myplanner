@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Filmes (Atualizar)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<h1>Atualizar Filme: <span th:text="${antigo.titulo}"></span></h1>
+    <form action="#" th:action="@{'/updfilme/' + ${id}}" method=post>
+    	Status: <input type="text" th:field="${antigo.status}">
+    	<input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>

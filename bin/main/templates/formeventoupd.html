@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
+	<h1>Atualizar Evento: <span th:text="${antigo.nome}"></span></h1>
     <form action="#" th:action="@{'/upd/' + ${id}}" method=post>
     	Localizacao: <input type="text" th:field="${antigo.localizacao}">
     	Data: <input type="text" th:field="${antigo.data}">

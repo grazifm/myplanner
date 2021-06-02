@@ -4,14 +4,32 @@ package com.model;
 public class Evento {
 		private int id;
 		private String nome;
-		public void Evento3(String string, String string2) {
-			// TODO Auto-generated constructor stub
-		}
+		private String localizacao;
+		private String data;
+		private String horario;
+
+		public Evento () {}
+	
+
+		
 		public Evento(String string, String string2) {
 			// TODO Auto-generated constructor stub
 		}
-		public void Evento2(String string, String string2) {
-			// TODO Auto-generated constructor stub
+		public Evento(String nome, String localizacao, String data) {
+			
+			this.nome = nome;
+			this.localizacao = localizacao;
+			this.data = data;
+			
+		}
+		
+		public Evento(int id, String nome, String localizacao, String data, String horario) {
+			super();
+			this.id = id;
+			this.nome = nome;
+			this.localizacao = localizacao;
+			this.data = data;
+			this.horario = horario;
 		}
 		public int getId() {
 			return id;
@@ -43,7 +61,5 @@ public class Evento {
 		public void setHorario(String horario) {
 			this.horario = horario;
 		}
-		private String localizacao;
-		private String data;
-		private String horario;
+		
 }
