@@ -1,13 +1,25 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cadastro - Sucesso</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/sucesso.module.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>My Planner - Success</title>
 </head>
 <body>
-    <h1>
-     <span th:text="${tipo}"></span> INSERIDO COM SUCESSO!
-    </h1>
-    <p><a th:href="@{/}">VOLTAR</a></p>
+  <div class="container">
+    <h1 class="logo">My Planner</h1>
+    <i class="icon" data-feather="check-circle"></i>
+    <h2 class="title">Created!</h1>
+    <a class="link" th:href="@{/}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
+  </div>
+  <script>
+    feather.replace()
+  </script>
 </body>
 </html>

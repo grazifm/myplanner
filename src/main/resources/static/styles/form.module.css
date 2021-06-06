@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+}
+
+.wrapper h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.wrapper h1 span {
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: var(--primary-gray);
+  padding: 2rem;
+  border-radius: .5rem;
+}
+
+.form__label {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+  color: var(--label-color);
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-normal);
+  transition: all .2s ease;
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  border-radius: .3rem;
+  flex: 1 1 0%;
+  caret-color: var(--text-normal);
+}
+
+.form__input:hover {
+  border-color: var(--input-border-hover);
+}
+
+.form__input:focus {
+  border-color: var(--primary-blue);
+}
+
+.form__input + .form__label {
+  margin-top: 1.5rem;
+}
+
+.form__input option{
+  background-color: var(--primary-gray);
+}
+
+.form__voltar {
+  border: none;
+  border-radius: 3px;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--primary-red);
+  color: var(--white);
+  transition: all .2s ease;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form__voltar:hover {
+
+  background-color: var(--dark-red);
+
+}
+
+.form__button {
+  border: none;
+  border-radius: 3px;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--primary-green);
+  color: var(--white);
+  transition: all .2s ease;
+}
+
+.form__button:hover {
+  background-color: var(--dark-green);
+}
+
+.default {
+  color: var(--label-color);
+}
+
+input[type=date]{
+  padding: .65rem 2rem;
+}
+
+input[type=time] {
+  padding: .55rem 2rem;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(.5);
+  width: 2.6rem;
+  height: 2.6rem;
+  transition: all .3s ease;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
+}

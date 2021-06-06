@@ -1,16 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cadastro de series</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/dashboard.module.css">
+  <link rel="stylesheet" href="styles/tabmenu.module.css">
+  <link rel="stylesheet" href="styles/form.module.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>My Planner - Dashboard</title>
 </head>
 <body>
-    <form action="#" th:action="@{/serie}" method=post th:object="${serie}">
-    	Titulo: <input type="text" th:field="*{titulo}"><br><br>
-    	Status: <input type="text" th:field="*{status}"><br><br>
-    	Streaming: <input type="text" th:field="*{streaming}">
-    	Temporada: <input type="text" th:field="*{temporada}">
-    	<input type="submit" value="Cadastrar">
-    </form>
+  <div class="container">
+
+    <nav class="navbar">
+      <div>
+        <button class="navbar__button" type="menu"><i class="navbar__button__icon" data-feather="menu"></i></button>
+        <h1 class="navbar__logo logo">My Planner</h1>
+      </div> 
+    </nav>
+
+    <div class="content">
+      <div class="tabs">
+        <a class="tabs__button" th:href="@{/filmes}">
+          <i class="tabs__icon" data-feather="film"></i>
+          <p class="tabs__text">
+            Films
+          </p>
+        </a>
+        
+        
+        <a class="tabs__button" th:href="@{/livros}">
+          <i class="tabs__icon" data-feather="book-open"></i>
+          <p class="tabs__text">
+            Books
+          </p>
+        </a>
+          
+          
+        <a class="tabs__button active">
+          <i class="tabs__icon" data-feather="tv"></i>
+          <p class="tabs__text">
+            TV Shows
+          </p>
+        </a>
+        
+        
+        <a class="tabs__button" th:href="@{/eventos}">
+          <i class="tabs__icon" data-feather="calendar"></i>
+          <p class="tabs__text">
+            Events 
+          </p>
+        </a>
+          
+      </div>
+      <div class="layer"></div>
+
+      <div class="tab__content">
+        <ul class="tab__content__list">
+          <li><a class="tab__content__link" th:href="@{/series}">TV Shows</a></li>
+          <li><a class="tab__content__link active" href="#">New TV Show</a></li>
+        </ul>
+
+        <div class="wrapper">
+          <form class="form" action="#" th:action="@{/serie}" method=post th:object="${serie}">
+            <label class="form__label" for="titulo">Title</label>
+            <input class="form__input" type="text" name="titulo" id="titulo" th:field="*{titulo}" required>
+            
+            <label class="form__label" for="streaming">Streaming</label>
+            <input class="form__input" type="text" name="streaming" id="streaming" th:field="*{streaming}" required>
+            
+            <label class="form__label" for="temporada">Season</label>
+            <input class="form__input" type="text" name="temporada" id="temporada" th:field="*{temporada}" required>
+            
+            <label class="form__label" for="status">Status</label>
+            <select class="form__input" id="status" th:field="*{status}" required>
+              <option class="default" value="">Choose a status</option>
+              <option value="Quero assistir">Want to watch</option>
+              <option value="Assistindo">Watching</option>
+              <option value="Assistido">Watched</option>
+            </select>
+            
+            <button class="form__button" type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+  <script>
+    feather.replace()
+  </script>
+  <script src="js/utils/handleTabs.js"></script>
+  <script src="js/utils/handleMenu.js"></script>
 </body>
 </html>

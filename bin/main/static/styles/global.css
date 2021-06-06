@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@font-face {
+  font-family: "Grutch";
+  src: url("../fonts/GrutchShaded.ttf");
+}
+
+:root {
+  font-size: 55%;
+  --primary-green: #01bd4c;
+  --dark-green: #019b3e;
+  --primary-blue: #0492f2;
+  --dark-blue: #037dcf;
+  --primary-red: #fd2c2c;
+  --dark-red: #dd1b1b;
+  --text-normal: #fff;
+  --primary-gray: #36393F;
+  --dark-gray: #202225;
+  --input-bg: #0000001a;
+  --input-border: #0000004d;
+  --input-border-hover: #040405;
+  --label-color: #8e9297;
+  --tab-color-hover: #ffffffa1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border:none;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--dark-gray);
+  color: var(--text-normal);
+}
+
+
+.logo {
+  font-family: "Grutch";
+  color: var(--text-normal);
+}
+
+input, button, textarea{
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-normal);
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  :root{
+    font-size: 62.5%;
+  }
+}

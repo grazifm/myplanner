@@ -1,16 +1,87 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Formulario de Evento (Atualizar)</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/dashboard.module.css">
+  <link rel="stylesheet" href="../styles/tabmenu.module.css">
+  <link rel="stylesheet" href="../styles/form.module.css">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>My Planner - Dashboard</title>
 </head>
 <body>
+  <div class="container">
 
-	<h1>Atualizar Evento: <span th:text="${antigo.nome}"></span></h1>
-    <form action="#" th:action="@{'/upd/' + ${id}}" method=post>
-    	Localizacao: <input type="text" th:field="${antigo.localizacao}">
-    	Data: <input type="text" th:field="${antigo.data}">
-    	<input type="submit" value="Cadastrar">
-    </form>
+    <nav class="navbar">
+      <div>
+        <button class="navbar__button" type="menu"><i class="navbar__button__icon" data-feather="menu"></i></button>
+        <h1 class="navbar__logo logo">My Planner</h1>
+      </div> 
+    </nav>
+
+    <div class="content">
+      <div class="tabs">
+        <a class="tabs__button" th:href="@{/filmes}">
+          <i class="tabs__icon" data-feather="film"></i>
+          <p class="tabs__text">
+            Films
+          </p>
+        </a>
+        
+        
+        <a class="tabs__button" th:href="@{/livros}">
+          <i class="tabs__icon" data-feather="book-open"></i>
+          <p class="tabs__text">
+            Books
+          </p>
+        </a>
+          
+          
+        <a class="tabs__button" th:href="@{/series}">
+          <i class="tabs__icon" data-feather="tv"></i>
+          <p class="tabs__text">
+            TV Shows
+          </p>
+        </a>
+        
+        
+        <div class="tabs__button active">
+          <i class="tabs__icon" data-feather="calendar"></i>
+          <p class="tabs__text">
+            Events 
+          </p>
+        </div>
+          
+      </div>
+      <div class="layer"></div>
+
+      <div class="tab__content">
+        <div class="wrapper">
+          <h1>Update event <span th:text="${antigo.nome}"></span></h1>
+          <form class="form" action="#" th:action="@{'/upd/' + ${id}}" method=post>
+            <label class="form__label" for="address">Address</label>
+            <input class="form__input" type="text" name="address" id="address" th:field="*{antigo.localizacao}" required>
+            
+            <label class="form__label" for="date">Date</label>
+            <input class="form__input" type="date" name="date" id="date" pattern="\d{4}-\d{2}-\d{2}" th:field="*{antigo.data}" required>
+            
+            <a class="form__voltar" type="submit"  th:href="@{/eventos}">Back</a>
+            <button class="form__button" type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+  <script>
+    feather.replace()
+  </script>
+  <script src="js/utils/handleTabs.js"></script>
+  <script src="js/utils/handleMenu.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+.tab__content {
+  display: flex;
+  justify-content: center;
+}
+
+.configuracoes {
+  width: 100%;
+  max-width: 60rem;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+}
+

@@ -1,0 +1,47 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 4rem;
+  font-weight: 100;
+  position: absolute;
+  top: 2rem;
+}
+
+.icon {
+  color: var(--primary-green);
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin: .5rem 0 1rem 0;
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--label-color);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: .8rem;
+  transition: all .3s ease;
+}
+
+.link > svg {
+  margin-right: 1rem;
+}
+
+.link:hover {
+  background-color: #15161842;
+  color: var(--text-normal);
+}

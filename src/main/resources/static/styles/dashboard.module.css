@@ -1,0 +1,265 @@
+.container {
+  display: grid;
+  grid-template-rows: 7rem 1fr;
+
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  background-color: var(--primary-gray);
+  padding: 1rem 1rem 1rem .5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2022252c;
+}
+
+.navbar > div {
+  display: flex;
+}
+
+.navbar__logo {
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.navbar__button {
+  margin-right: 1rem;
+  padding: 0 1.5rem;
+  border: none;
+  font-size: 0;
+  background-color: transparent;
+  border-radius: 100%;
+  color: var(--label-color);
+}
+
+.navbar__button__logout {
+  padding: 0 1.5rem;
+  border: none;
+  font-size: 0;
+  background-color: transparent;
+  border-radius: 100%;
+  color: var(--label-color);
+}
+
+.navbar__button__more {
+  padding: 0 1rem;
+  border: none;
+  font-size: 0;
+  background-color: transparent;
+  border-radius: 100%;
+  color: var(--label-color);
+}
+
+.events {
+  height: 90%;
+}
+
+.events__list {
+  list-style-type: none;
+  height: calc(100% - 5.1rem);
+  overflow-y: scroll;
+}
+
+.events__title {
+  margin-bottom: 1.6rem;
+}
+
+.events > div{
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.events__item {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.events__item + .events__item {
+  border-top: 1px solid var(--dark-gray);
+}
+
+.events__item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.events__button__add {
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.events__item__hour {
+  font-size: 1.6em;
+  color: var(--label-color)
+}
+
+.events__item__title {
+  font-size: 1.8rem;
+  margin-top:.8rem;
+}
+
+.tabs {
+  grid-area: tabs;
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100% - 7rem);
+  position: fixed;
+  background-color: var(--primary-gray);
+  list-style-type: none;
+}
+
+.tabs--open {
+  width: 200px;
+}
+
+.tabs__button {
+  display: flex;
+  align-items: center;
+  color: var(--label-color);
+  border: none;
+  background-color: transparent;
+  padding: 2rem;
+  width: 100%;
+  transition: all .2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tabs__button:hover {
+  color: var(--tab-color-hover);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tabs__button.active:hover {
+  color: var(--text-normal);
+  background-color: transparent;
+}
+
+.tabs__button.active {
+  color: var(--text-normal);
+  cursor: default;
+}
+
+.tabs__button.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 3rem;
+  width: .4rem;
+  background-color: #DC143C;
+}
+
+.tabs__text {
+  display:none;
+  font-size: 1.4rem;
+  margin-left: 1.6rem;
+}
+
+.tabs__text--open {
+  display:block !important;
+}
+
+.content {
+  display: grid;
+  grid-template-areas: "tabs content"
+  "tabs content";
+  grid-template-columns: auto 1fr;
+
+  overflow-y: scroll;
+}
+
+.content p {
+  font-size: 1.6rem;
+}
+
+.tab__content {
+  grid-area: content;
+  padding: 2rem 4rem;
+  padding-left: 10.4rem;
+}
+
+.tab__content--open {
+  padding-left: 24rem;
+}
+
+/*scrollbar*/
+
+.events__list::-webkit-scrollbar {
+  width: .8rem;
+  transition: all .2s ease;
+}
+
+.events__list::-webkit-scrollbar-thumb {
+  background: var(--dark-gray); 
+  border-radius: .8rem;
+}
+.events__list::-webkit-scrollbar-thumb:hover {
+  background: #202225b7; 
+}
+
+.content::-webkit-scrollbar {
+  width: .8rem;
+  transition: all .2s ease;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: var(--primary-gray); 
+  border-radius: 1rem;
+}
+.content::-webkit-scrollbar-thumb:hover {
+  background: #202225b7; 
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 700px) {
+  .navbar__logo {
+    font-size: 3rem;
+  }
+
+  .tabs {
+    display: none;
+    position: absolute;
+    height: calc(100% - 7rem);
+    z-index: 5;
+  }
+
+  .tabs--open {
+    display: flex;
+  }
+
+  .tab__content {
+    padding: 2rem;
+  }
+
+  .tab__content--open {
+    padding-left: 2rem;
+  }
+
+  .layer {
+    position: absolute;
+    background: #2022259c;
+    width: 100vw;
+    height: calc(100% - 7rem);
+    backdrop-filter: blur(5px);
+    transition: visibility 0s ease 0s, opacity 0.2s linear 0s;
+    visibility: hidden;
+    opacity: 1; 
+    z-index: 3;
+    padding-right: auto;
+  }
+
+  .layer--open {
+    visibility: visible;
+  }
+}
