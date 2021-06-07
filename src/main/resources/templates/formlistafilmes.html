@@ -74,9 +74,9 @@
               <div class="cards__content">
                 <h2 th:text="${movie.titulo}"></h2>
                 <p>Streaming: <span th:text="${movie.streaming}"></span></p>
-                <span th:if="${movie.status == 'Assistido'}" class="cards__status cards__status--watched">Want to watch</span>
+                <span th:if="${movie.status == 'Assistido'}" class="cards__status cards__status--watched">Watched</span>
                 <span th:if="${movie.status == 'Assistindo'}" class="cards__status cards__status--watching">Watching</span>
-                <span th:if="${movie.status == 'Quero assistir'}" class="cards__status cards__status--want">Watched</span>
+                <span th:if="${movie.status == 'Quero assistir'}" class="cards__status cards__status--want">Want to Watch</span>
                 
               </div>
               <div class="cards__actions">
