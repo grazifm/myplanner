@@ -15,7 +15,7 @@
     <h1 class="logo">My Planner</h1>
     <i class="icon" data-feather="check-circle"></i>
     <h2 class="title">Updated!</h2>
-    <a class="link" th:if = "${tipo == 'FILME'}" th:href="@{/livros}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
+    <a class="link" th:if = "${tipo == 'FILME'}" th:href="@{/filme}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
     <a class="link" th:if = "${tipo == 'LIVRO'}" th:href="@{/livros}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
     <a class="link" th:if = "${tipo == 'SERIE'}" th:href="@{/series}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
     <a class="link" th:if = "${tipo == 'EVENTO'}" th:href="@{/eventos}"><i class="voltar" data-feather="arrow-left"></i> Back</a>
